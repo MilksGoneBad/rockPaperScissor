@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Rock Paper Scissor
+        </title>
+    </head>
+
+    <body>
+
+        <script>
+        
+        let playerScore = 0;
+        let computerScore = 0;
+
+        function game() {
+                for (i=0; i<5; i++) {
+                    confirm("Ready?");
+                    let choice = choose()
+                    playRound(choice, computerPlay());
+                }
+                if (playerScore == computerScore) {
+                    let message = "TIE GAME!!! The score is " + playerScore + " to " + computerScore;
+                    confirm(message);
+                }
+                else if (playerScore > computerScore) {
+                    let message = "YOU WIN!!! The score is " + playerScore + " to " + computerScore;
+                    confirm(message);
+                }
+                else {
+                    let message = "YOU LOSE!!! The score is " + playerScore + " to " + computerScore;
+                    confirm(message);
+                }
+                playerScore = 0;
+                computerScore = 0;
+            }
+
+        function choose() {
+            let choice = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+            return choice;
+        }
+            
+            function computerPlay() {
+                let hand = Math.floor(Math.random()*3);
+                if (hand == 0) {
+                    return "rock"
+                }
+                else if (hand == 1) {
+                    return "paper"
+                }
+                else {
+                    return "scissors"
+                }
+            }
+
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection == computerSelection) {
+                    confirm("Tie!  Try Again!")
+                }
+                else if (playerSelection == "rock") {
+                    if (computerSelection == "scissors") {
+                        playerScore++;
+                        confirm("Scissors, You Win!!!")
+                    }
+                    else {
+                        computerScore++;
+                        confirm("Paper, You Lose, Sorry Rockhead!")
+                    }
+                }
+                else if (playerSelection == "scissors") {
+                    if (computerSelection == "paper") {
+                        playerScore++;
+                        confirm("Paper, You Win!!!")
+                    }
+                    else {
+                        computerScore++;
+                        confirm("Rock, You Lose, Sorry Scissorhands!")
+                    }
+                    
+                }
+                else {
+                    if (computerSelection == "rock") {
+                        playerScore++;
+                        confirm("Rock, You Win!!!")
+                    }
+                    else {
+                        computerScore++;
+                        confirm("Scissors, You Lose, Sorry Featherweight")
+                    }
+                }
+                
+            }
+
+            
+
+        </script>
+
+    </body>
+</html>
