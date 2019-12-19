@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
+   
+    <head>            
+        <link rel="stylesheet" href="style.css">
         <title>
             Rock Paper Scissor
         </title>
     </head>
 
     <body>
+<div>
 
-        <script>
+</div>
+<div class="main">
+    <div class="scores" id="results">Ready to play?</div>
+    <br>
+    <div class="scores" id="playerScore">Player Score</div>
+    <br>
+    <div class="scores" id="computerScore">Computer Score</div>
+    <button type="button" id="rock">Rock</button>
+    <button type="button" id="paper">Paper</button>
+    <button type="button" id="scissors">Scissor</button>
+  </div>
+
+</div>
+
+       
+
+    </body>
+
+    <script>
+        const playerScoreDisplay = document.getElementById("playerScore");
+        const computerScoreDisplay = document.getElementById("computerScore");
+        const resultsDisplay = document.getElementById("results");
         
         let playerScore = 0;
         let computerScore = 0;
 
         function game() {
-                for (i=0; i<5; i++) {
+
                     confirm("Ready?");
                     let choice = choose()
                     playRound(choice, computerPlay());
-                }
+                
                 if (playerScore == computerScore) {
                     let message = "TIE GAME!!! The score is " + playerScore + " to " + computerScore;
                     confirm(message);
@@ -91,9 +115,15 @@
                 
             }
 
+            const rockNode = document.getElementById("rock");
+            const paperNode = document.getElementById("paper");
+            const scissorNode = document.getElementById("scissors");
+            const buttonDiv = document.getElementById("rock").parentNode;
+
+            buttonDiv.addEventListener("click", function(e) {
+                playRound(e.target.id, computerPlay());
+            });
             
-
         </script>
-
-    </body>
+  
 </html>

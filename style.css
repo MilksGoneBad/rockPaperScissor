@@ -1,0 +1,39 @@
+html {
+    background: url(https://i.pinimg.com/originals/a5/59/6f/a5596ffd4897b35688d3b3b882d7919d.jpg) bottom center;
+    background-size: cover;
+    background-color: rgba(0,0,0,.5);
+}
+
+.scores {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 50%;
+    color: black;
+    background: rgb(255, 255, 255);
+    text-shadow: 0 0 .5rem black;
+    margin-left: 30%;
+    margin-right: 25%
+    margin-top: 40px;
+    text-align: center;
+}
+
+button {
+    border: .4rem solid black;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 50%;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+    margin-left: 30%;
+    margin-top: 40px;
+}
+
+main {
+    margin-left: 50px;
+}
